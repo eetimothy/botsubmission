@@ -1,0 +1,24 @@
+<div class="header">
+
+</div>
+<div nz-row nzJustify="space-around" nzAlign="middle">
+    <div nz-col nzJustify="space-around" nzAlign="middle">
+        <h2>Invalid Login</h2>
+        <p>Please try again</p>
+
+        <button nz-button [nzType]=" 'primary' " class="login-form-button login-form-margin" type="button"
+            [routerLink]="['/']">
+            LOGIN
+        </button>
+        Or <a [routerLink]="['/signup']">Signup now!</a>
+        <div nz-row class="login-form-margin">
+            <div nz-col [nzSpan]="60">
+                <a class="login-form-forgot">Forgot password</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div nz-row fxFlexFill>
+    <div nz-col></div>
+</div>

@@ -1,0 +1,38 @@
+<div class="header">
+    
+</div>
+<div nz-row nzJustify="space-around" nzAlign="middle">
+    <div nz-col nzJustify="space-around" nzAlign="middle">
+        <h1>User Login</h1>
+
+        <form [formGroup]="validateForm" class="login-form" (ngSubmit)="processLogin()">
+            <nz-form-item>
+                <nz-form-control nzErrorTip="*email required">
+                    <nz-input-group nzPrefixIcon="user">
+                        <input type="text" nz-input formControlName="email" placeholder="email" />
+                    </nz-input-group>
+                </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+                <nz-form-control nzErrorTip="*password required">
+                    <nz-input-group nzPrefixIcon="lock">
+                        <input type="password" nz-input formControlName="password" placeholder="password" />
+                    </nz-input-group>
+                </nz-form-control>
+            </nz-form-item>
+            <div nz-row class="login-form-margin">
+                <div nz-col [nzSpan]="60">
+                    <a class="login-form-forgot">Forgot password</a>
+                </div>
+            </div>
+            <button nz-button type="submit" value="login" class="login-form-button login-form-margin"
+                [nzType]=" 'primary' " [disabled]="validateForm.invalid">
+                <span>Login</span>
+            </button>
+            Or <a [routerLink]="['/signup']">Signup now!</a>
+        </form>
+    </div>
+</div>
+<div class="row" fxFlexFill>
+    <div class="col"></div>
+</div>

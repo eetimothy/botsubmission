@@ -1,0 +1,59 @@
+<div class="header">
+    
+</div>
+
+<div nz-row nzJustify="space-around" nzAlign="middle">
+    <div nz-col nzJustify="space-around" nzAlign="middle">
+        <h1>User Sign Up</h1>
+<form nz-form [formGroup]="signupForm" (ngSubmit)="processSignup()">
+    <nz-form-item>
+        <nz-form-control [nzSm]="24" [nzXs]="18" nzErrorTip="*username required">
+            <nz-input-group nzPrefixIcon="user">
+            <input nz-input id="username" formControlName="username" placeholder="Choose Username" />
+        </nz-input-group>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-control [nzSm]="24" [nzXs]="18" nzErrorTip="not a valid email">
+            <nz-input-group nzPrefixIcon="mail">
+            <input nz-input formControlName="email" id="email" placeholder="Email" />
+        </nz-input-group>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control [nzSm]="24" [nzXs]="18" nzErrorTip="not a valid mobile">
+          <nz-input-group nzPrefixIcon="mail">
+          <input nz-input formControlName="mobile" id="mobile" placeholder="Mobile" />
+      </nz-input-group>
+      </nz-form-control>
+  </nz-form-item>
+    <nz-form-item>
+        <nz-form-control [nzSm]="24" [nzXs]="18" nzErrorTip="Please input your password!">
+            <nz-input-group nzPrefixIcon="lock">
+          <input nz-input type="password" id="password" formControlName="password" placeholder="Password" (ngModelChange)="updateConfirmValidator()" />
+        </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        
+        <nz-form-control [nzSm]="24" [nzXs]="18" [nzErrorTip]="errorTpl">
+          <input nz-input type="password" formControlName="checkPassword" id="checkPassword" placeholder="Confirm password" />
+          <ng-template #errorTpl let-control>
+            <ng-container *ngIf="control.hasError('required')">
+              Please confirm your password!
+            </ng-container>
+            <ng-container *ngIf="control.hasError('confirm')">
+              passwords do not match
+            </ng-container>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item nz-row class="register-area">
+        <nz-form-control [nzSpan]="14" [nzOffset]="7">
+          <button type="submit" nz-button nzType="primary">Register</button>
+        </nz-form-control>
+      </nz-form-item>
+      Already Signed up? <a [routerLink]="['/login']">Login now!</a>
+</form>
+</div>
+</div>

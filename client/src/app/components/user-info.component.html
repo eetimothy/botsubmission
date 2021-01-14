@@ -1,0 +1,79 @@
+<ul nz-menu nzMode="horizontal">
+  <li nz-menu-item nzSelected>
+    <i nz-icon nzType="user"></i>
+    Update User Info
+  </li>
+  <li nz-menu-item>
+    <i nz-icon nzType="appstore"></i>
+    <a href="https://t.me/ComeMoneyCome_bot" target="_blank">BOT Store</a>
+  </li>
+  <li nz-submenu nzTitle="Settings" nzIcon="setting">
+    <ul>
+      <li nz-menu-group nzTitle="Manage Bots">
+        <ul>
+          <li nz-menu-item>Helpdesk Bot</li>
+          <li nz-menu-item>Retail Bot</li>
+        </ul>
+      </li>
+      <li nz-menu-group nzTitle="Contact">
+        <ul>
+            <ul>
+            </ul>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div nz-row nzJustify="space-around" nzAlign="middle">
+  <div nz-col nzJustify="space-around" nzAlign="middle">
+      <h3>Additional User Info</h3>
+
+<form [formGroup]="form" class="login-form" (ngSubmit)="process()">
+  <nz-form-item>
+    <nz-form-control nzErrorTip="*name required">
+        <nz-input-group nzPrefixIcon="user">
+            <input type="text" nz-input formControlName="fullname" placeholder="Full Name" />
+        </nz-input-group>
+    </nz-form-control>
+</nz-form-item>
+<nz-form-item>
+    <nz-form-control nzErrorTip="*nric required">
+        <nz-input-group nzPrefixIcon="lock">
+            <input type="text" nz-input formControlName="nric" placeholder="Nric" />
+        </nz-input-group>
+    </nz-form-control>
+</nz-form-item>
+        <tr>
+            <td></td>
+            <td>
+                <button nz-button type="submit" class="login-form-button">Submit</button>
+            </td>
+        </tr>
+    
+</form>
+<hr>
+
+<div nzJustify="space-around" nzAlign="middle">
+    <form [formGroup]="form" (ngSubmit)="upload()">
+      <nz-form-item>
+      <label>Upload Nric </label>
+    </nz-form-item>
+    <nz-form-item>
+      <input type="file" accept="image/*" formControlName="image-file" #imageFile/>
+    </nz-form-item>
+     <nz-form-item>
+    <button nz-button type="submit" [nzType]=" 'primary' " class="login-form-button">Upload</button>
+  </nz-form-item>  
+  </form>
+  </div>
+  <hr>
+  <div>
+    <img [src]="uploadImg" width="100vw" height="100vw"/>
+  </div>
+</div>
+</div>
+<div class="row" fxFlexFill>
+  <div class="col"></div>
+</div>
+ 
